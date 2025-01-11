@@ -1,0 +1,102 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Chemistry Model Diagrams}
+\author{Benjamin Harrison}
+\date{January 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\pagestyle{empty}
+
+\begin{tikzpicture}[scale = 1]
+
+%points on cube
+
+\coordinate (A) at (0,0,0);
+\coordinate (B) at (0,0,4);
+\coordinate (D) at (0,4,0);
+\coordinate (C) at (0,4,4);
+\coordinate (E) at (4,0,0);
+\coordinate (F) at (4,0,4);
+\coordinate (H) at (4,4,0);
+\coordinate (G) at (4,4,4);
+
+%center of faces
+
+\coordinate (I) at (0,2,2); %center of face ABCD
+\coordinate (J) at (4,2,2); %center of face EFGH
+\coordinate (K) at (2,4,2); %center of face DCGH
+\coordinate (L) at (2,0,2); %center of face ABFE
+\coordinate (M) at (2,2,4); %center of face CBGF
+\coordinate (N) at (2,2,0); %center of face DAEH
+
+%connectors
+
+\coordinate (O) at (1,1,3);
+\coordinate (P) at (1,3,1);
+\coordinate (Q) at (3,1,1);
+\coordinate (R) at (3,3,3);
+%place non-atom cube corners
+\shadedraw [ball color= gray] (A) circle (0.1cm);
+\shadedraw [ball color= gray] (C) circle (0.1cm);
+\shadedraw [ball color= gray] (F) circle (0.1cm);
+\shadedraw [ball color= gray] (H) circle (0.1cm);
+\shadedraw [ball color= black] (B) circle (0.25cm);
+\shadedraw [ball color= black] (D) circle (0.25cm);
+\shadedraw [ball color= black] (E) circle (0.25cm);
+\shadedraw [ball color= black] (G) circle (0.25cm);
+%draw the center of each face
+\shadedraw [ball color= red] (I) circle (0.25cm);
+\shadedraw [ball color= red] (J) circle (0.25cm);
+\shadedraw [ball color= red] (K) circle (0.25cm);
+\shadedraw [ball color= red] (L) circle (0.25cm);
+\shadedraw [ball color= red] (M) circle (0.25cm);
+\shadedraw [ball color= red] (N) circle (0.25cm);
+%connectors
+\shadedraw [ball color= blue] (O) circle (0.25cm);
+\shadedraw [ball color= blue] (P) circle (0.25cm);
+\shadedraw [ball color= blue] (Q) circle (0.25cm);
+\shadedraw [ball color= blue] (R) circle (0.25cm);
+%draw cube
+\draw [dashed] (A) -- (B);
+\draw [dashed] (B) -- (C);
+\draw [dashed] (C) -- (D);
+\draw [dashed] (D) -- (A);
+\draw [dashed] (E) -- (F);
+\draw [dashed] (F) -- (G);
+\draw [dashed] (G) -- (H);
+\draw [dashed] (H) -- (E);
+\draw [dashed] (A) -- (E);
+\draw [dashed] (B) -- (F);
+\draw [dashed] (C) -- (G);
+\draw [dashed] (D) -- (H);
+%connections from faces to O
+\draw [very thick] (B) -- (O);
+\draw [very thick] (I) -- (O);
+\draw [very thick] (M) -- (O);
+\draw [very thick] (L) -- (O);
+%connections from faces to P
+\draw [very thick] (N) -- (P);
+\draw [very thick] (I) -- (P);
+\draw [very thick] (D) -- (P);
+\draw [very thick] (K) -- (P);
+%connections from faces to Q
+\draw [very thick] (E) -- (Q);
+\draw [very thick] (J) -- (Q);
+\draw [very thick] (N) -- (Q);
+\draw [very thick] (L) -- (Q);
+%connections from faces to R
+\draw [very thick] (G) -- (R);
+\draw [very thick] (M) -- (R);
+\draw [very thick] (J) -- (R);
+\draw [very thick] (K) -- (R);
+\end{tikzpicture}
+\end{document}
+
+\end{document}
